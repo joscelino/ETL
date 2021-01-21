@@ -1,0 +1,13 @@
+##### Agrupamentos - Medidas de resumo por fator
+
+# Agrupando por Ano
+
+datasus2<- datasus %>% group_by(Ano)
+datasus2 %>% summarise(MediaObitos=mean(Obitos))
+
+# Agrupando por Região
+datasus3<- datasus %>% group_by(Regiao)
+datasus3 %>% summarise(TotalObitosFetais=sum(`obitos fetais`))
+datasus3 %>% summarise(TotalObitosFetais=sum(`obitos fetais`),MediaObitos=mean(Obitos))
+datasus3 %>% summarise(MediaObitosFetais=mean(`obitos fetais`),MediaObitos=mean(Obitos))
+
